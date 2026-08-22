@@ -327,6 +327,26 @@ a{color:inherit}
   padding-left:.8rem;border-left:1px solid var(--rule-firm);
 }
 
+.sights__h{
+  font-size:.62rem;text-transform:uppercase;letter-spacing:.16em;
+  color:var(--ink-soft);margin:1.2rem 0 .5rem;
+}
+.sights{list-style:none;margin:0 0 .9rem;padding:0}
+.sights li{padding:.5rem 0 .5rem .85rem;border-left:1px solid var(--rule)}
+.sights b{
+  display:block;font-family:var(--display);font-weight:400;
+  font-size:1.06rem;line-height:1.25;margin-bottom:.12rem;
+}
+.sights p{margin:0;font-size:.87rem;line-height:1.5;color:var(--ink-soft)}
+.sights em{font-style:italic}
+.tag{
+  display:inline-block;margin-left:.4rem;vertical-align:.12em;
+  font-family:var(--body);font-size:.56rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.13em;
+  padding:.18rem .4rem;border:1px solid var(--ink-soft);
+  white-space:nowrap;
+}
+
 .day[data-today] .day__body h3::after{
   content:"today";
   display:inline-block;vertical-align:middle;
