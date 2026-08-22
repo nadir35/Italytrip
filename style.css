@@ -121,45 +121,42 @@ a{color:inherit}
   color:var(--ink-soft);
 }
 
-/* signature element: the elevation profile ---------------- */
+/* signature element: the route map, projected from real coordinates */
 
-.profile{margin:2rem 0 0}
+.map{margin:2rem 0 0}
+.map__svg{display:block;width:100%;height:auto;max-width:26rem;margin:0 auto}
 
-.profile__svg{display:block;width:100%;height:auto;overflow:visible}
+.sea{fill:var(--sea);fill-opacity:.15}
+.lake{fill:var(--sea);fill-opacity:.22}
 
-.band{opacity:.14}
-.band--bologna {fill:var(--ochre)}
-.band--gardena {fill:var(--meadow)}
-.band--florence{fill:var(--portico)}
-.band--coast   {fill:var(--sea)}
+.leg{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.leg--car{stroke:var(--meadow);stroke-width:4}
+.leg--flo{stroke:var(--portico);stroke-width:3.5;stroke-dasharray:9 7}
+.leg--sea{stroke:var(--sea);stroke-width:3.5;stroke-dasharray:9 7}
+.leg--home{stroke:var(--slate);stroke-opacity:.3;stroke-width:2.5;stroke-dasharray:5 8}
+.leg--rail-key{stroke:var(--slate);stroke-opacity:.55;stroke-width:3.5;stroke-dasharray:9 7}
 
-.seam line{stroke:var(--slate);stroke-opacity:.20;stroke-width:1}
-.grid line{stroke:var(--slate);stroke-opacity:.18;stroke-width:1;stroke-dasharray:2 7}
+.pin{stroke:var(--limestone);stroke-width:3.5}
+.p--bologna {fill:var(--ochre)}
+.p--gardena {fill:var(--meadow)}
+.p--florence{fill:var(--portico)}
+.p--coast   {fill:var(--sea)}
+.town{fill:var(--slate);fill-opacity:.42}
 
-.profile__fill{fill:var(--slate);fill-opacity:.10}
-.profile__line{
-  fill:none;stroke:var(--slate);stroke-width:3.5;
-  stroke-linejoin:round;stroke-linecap:round;
+.map__svg text{font-family:var(--body);fill:var(--slate)}
+.lbl {font-size:25px;font-weight:600}
+.ctx {font-size:21px;fill-opacity:.6}
+.map__svg .water{
+  font-size:20px;fill:var(--slate);fill-opacity:.5;
+  letter-spacing:1.5px;font-style:italic;
 }
-.baseline{stroke:var(--slate);stroke-opacity:.5;stroke-width:1.5}
-
-.dot{stroke:var(--limestone);stroke-width:3.5}
-.dot--bologna {fill:var(--ochre)}
-.dot--gardena {fill:var(--meadow)}
-.dot--florence{fill:var(--portico)}
-.dot--coast   {fill:var(--sea)}
-
-.profile__svg text{font-family:var(--body);fill:var(--slate)}
-.alt {font-size:28px;fill-opacity:.72;letter-spacing:.5px}
-.peak{font-size:32px;font-weight:600;letter-spacing:2px}
 
 .bases{
-  list-style:none;margin:1rem 0 0;padding:0;
+  list-style:none;margin:1.1rem 0 0;padding:0;
   display:grid;grid-template-columns:1fr 1fr;
   column-gap:1.1rem;row-gap:.85rem;
 }
 .bases li[data-base]{border-top:3px solid var(--accent);padding:.5rem 0 0}
-.bases__out{display:none}
 .bases a{
   display:block;text-decoration:none;
   font-size:.82rem;font-weight:600;letter-spacing:.02em;
@@ -170,9 +167,27 @@ a{color:inherit}
   text-transform:uppercase;color:var(--ink-soft);margin-top:.15rem;
 }
 
-.profile figcaption{
+.map figcaption,.line figcaption{
   margin:.9rem 0 0;font-size:.8rem;line-height:1.5;color:var(--ink-soft);
 }
+
+/* the Cinque Terre line, as a schematic ------------------- */
+
+.line{margin:1.6rem 0 0}
+.line__svg{display:block;width:100%;height:auto;max-width:23rem}
+.rail{stroke:var(--slate);stroke-opacity:.45;stroke-width:3}
+.stop{fill:var(--sea);stroke:var(--limestone);stroke-width:3}
+.line__svg text{font-family:var(--body);fill:var(--slate)}
+.stop__t{font-size:23px;font-weight:600}
+.gap{font-size:18px;fill-opacity:.6}
+.trail{fill:none;stroke-width:4;stroke-linecap:round}
+.trail--open {stroke:var(--meadow)}
+.trail--shut {stroke:var(--portico);stroke-dasharray:4 7}
+.trail--amore{stroke:var(--sea)}
+.line__svg .gap--open,
+.line__svg .gap--shut,
+.line__svg .gap--amore{fill-opacity:.85}
+
 
 /* nav ---------------------------------------------------- */
 
@@ -233,7 +248,7 @@ a{color:inherit}
 .glance td,.glance th{font-weight:400;padding:0;text-align:left}
 
 /* base — the answer to "where do we sleep" — leads the card */
-.glance th[scope="row"]{
+.glance th[data-col="base"]{
   order:1;flex:1 0 100%;
   font-family:var(--display);font-size:1.35rem;line-height:1.2;
   margin-bottom:.15rem;
@@ -242,22 +257,21 @@ a{color:inherit}
   font-family:var(--body);font-size:.72rem;color:var(--ink-soft);
   text-transform:uppercase;letter-spacing:.1em;margin-left:.4rem;
 }
-.glance td[data-label="Dates"]{
+.glance td[data-col="dates"]{
   order:2;font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;
   color:var(--ink-soft);
 }
-.glance td[data-label^="night"]{
+.glance td[data-col="nights"]{
   order:3;font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;
   color:var(--ink-soft);
 }
-.glance td[data-label^="night"]::before{content:"·";margin:0 .45rem}
-.glance td[data-label^="night"]::after{content:" " attr(data-label)}
-.glance tr[data-base="transit"] td[data-label^="night"]::after{content:none}
-.glance td[data-label="Getting there"]{
+.glance td[data-col="nights"]::before{content:"·";margin:0 .45rem}
+.glance td[data-unit]::after{content:" " attr(data-unit)}
+.glance td[data-col="via"]{
   order:4;flex:1 0 100%;margin-top:.5rem;line-height:1.45;
 }
-.glance td[data-label="Getting there"]::before{
-  content:"Getting there";display:block;
+.glance td[data-col="via"]::before{
+  content:"Як дістатися";display:block;
   font-size:.62rem;text-transform:uppercase;letter-spacing:.14em;
   color:var(--ink-soft);margin-bottom:.05rem;
 }
@@ -312,7 +326,7 @@ a{color:inherit}
   text-transform:uppercase;letter-spacing:.09em;
 }
 .bed::before{
-  content:"Tonight";
+  content:"Ночуємо";
   display:block;font-size:.62rem;font-weight:400;letter-spacing:.16em;
   color:var(--ink-soft);margin-bottom:.1rem;
 }
@@ -348,7 +362,7 @@ a{color:inherit}
 }
 
 .day[data-today] .day__body h3::after{
-  content:"today";
+  content:"сьогодні";
   display:inline-block;vertical-align:middle;
   margin-left:.6rem;padding:.2rem .5rem;
   font-family:var(--body);font-size:.6rem;font-weight:600;
@@ -451,16 +465,7 @@ dd{margin:0;font-size:.93rem;color:var(--slate)}
 /* ≥ 560px ------------------------------------------------ */
 
 @media (min-width:35rem){
-  .alt{font-size:20px}
-  .peak{font-size:23px;letter-spacing:1.6px}
-
-  .bases{display:flex;padding:0 2.4%;gap:0}
-  .bases li{padding:.5rem .7rem 0 0}
-  .bases li[data-base="bologna"] {flex:142.8 1 0}
-  .bases li[data-base="gardena"] {flex:380.8 1 0}
-  .bases li[data-base="florence"]{flex:190.4 1 0}
-  .bases li[data-base="coast"]   {flex:190.4 1 0}
-  .bases__out{display:block;flex:47.6 1 0}
+  .bases{grid-template-columns:repeat(4,1fr);column-gap:1rem}
 }
 
 /* ≥ 48rem ------------------------------------------------ */
@@ -471,8 +476,11 @@ dd{margin:0;font-size:.93rem;color:var(--slate)}
   .nav a{font-size:.72rem;letter-spacing:.13em}
   .hero{padding-top:3.5rem}
 
-  .alt{font-size:16px}
-  .peak{font-size:18px;letter-spacing:1.2px}
+  .lbl{font-size:19px}
+  .ctx{font-size:16px}
+  .water{font-size:15px}
+  .stop__t{font-size:18px}
+  .gap{font-size:14px}
 
   .day{padding-left:8rem;padding-bottom:2.5rem}
   .day::before{left:5.4rem}
@@ -494,18 +502,18 @@ dd{margin:0;font-size:.93rem;color:var(--slate)}
     text-transform:uppercase;letter-spacing:.14em;color:var(--ink-soft);
     border-bottom:1px solid var(--rule-firm);
   }
-  .glance td[data-label],.glance th[scope="row"]{
+  .glance td[data-col],.glance th[data-col]{
     display:table-cell;
     padding:.8rem .9rem;
     border-bottom:1px solid var(--rule);
     font-size:.92rem;font-family:var(--body);color:var(--slate);
     text-transform:none;letter-spacing:0;margin:0;
   }
-  .glance td[data-label]::before,
-  .glance td[data-label]::after,
-  .glance th[scope="row"]::before{content:none}
-  .glance td[data-label]:first-child{padding-left:0}
-  .glance td[data-label]:last-child{padding-right:0}
+  .glance td[data-col]::before,
+  .glance td[data-col]::after,
+  .glance th[data-col]::before{content:none}
+  .glance td[data-col]:first-child{padding-left:0}
+  .glance td[data-col]:last-child{padding-right:0}
   .glance th[scope="row"]{
     border-left:3px solid var(--accent);
     font-family:var(--display);font-size:1.2rem;line-height:1.25;

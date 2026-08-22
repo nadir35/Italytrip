@@ -1,437 +1,473 @@
 <!doctype html>
-<html lang="en">
+<html lang="uk">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Italy · 2–12 October 2026</title>
-<meta name="description" content="Ten nights, four bases: Bologna, Val Gardena, Florence, Cinque Terre. 2–12 October 2026.">
+<title>Італія · 2–12 жовтня 2026</title>
+<meta name="description" content="Десять ночей, чотири бази: Болонья, Валь-Гардена, Флоренція, Чінкве-Терре. 2–12 жовтня 2026.">
 <meta name="theme-color" content="#2B3138">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%232B3138'/><path d='M3 24 L11 9 L16 17 L21 12 L29 24 Z' fill='%23E4E2DC'/></svg>">
 </head>
 <body>
 
-<a class="skip" href="#glance">Skip to itinerary</a>
+<a class="skip" href="#glance">Перейти до маршруту</a>
 
 <header class="hero">
   <div class="wrap">
-    <p class="kicker">Two travellers · Leipzig → Bologna · ten nights</p>
-    <h1 class="hero__title">Italy<span class="hero__rule"></span><em>2&thinsp;–&thinsp;12 October 2026</em></h1>
+    <p class="kicker">Двоє мандрівників · Лейпциг → Болонья · десять ночей</p>
+    <h1 class="hero__title">Італія<span class="hero__rule"></span><em>2&thinsp;–&thinsp;12 жовтня 2026</em></h1>
 
     <p class="countdown" id="countdown" aria-live="polite">
       <span class="countdown__num" id="countdown-num">—</span>
-      <span class="countdown__label" id="countdown-label">days until departure</span>
+      <span class="countdown__label" id="countdown-label">днів до вильоту</span>
     </p>
 
-    <!-- Signature element: the real elevation profile of the trip -->
-    <figure class="profile">
-      <svg viewBox="0 0 1000 450" class="profile__svg" role="img"
-           aria-label="Elevation profile of the trip. Bologna at 54 metres for two nights, rising to Ortisei at 1,236 metres, peaking at Seceda 2,519 metres on 5 October, Alpe di Siusi at 1,850 metres, then down to Florence at 50 metres and to the Ligurian coast at sea level, before returning to Bologna.">
-        <rect class="band band--bologna"  x="24"    y="40" width="142.8" height="390"/>
-        <rect class="band band--gardena"  x="166.8" y="40" width="380.8" height="390"/>
-        <rect class="band band--florence" x="547.6" y="40" width="190.4" height="390"/>
-        <rect class="band band--coast"    x="738"   y="40" width="190.4" height="390"/>
-        <g class="seam">
-          <line x1="166.8" y1="40" x2="166.8" y2="430"/>
-          <line x1="547.6" y1="40" x2="547.6" y2="430"/>
-          <line x1="738"   y1="40" x2="738"   y2="430"/>
-          <line x1="928.4" y1="40" x2="928.4" y2="430"/>
+    <!-- Signature element: the route, drawn from real coordinates -->
+    <figure class="map">
+      <svg viewBox="-34 8 726 792" class="map__svg" role="img"
+           aria-label="Карта маршруту північною та центральною Італією. Болонья в долині По, звідти автомобілем на північ через Верону, Тренто і Больцано до Ортізеї в Доломітах; назад до Болоньї і потягом на південь до Флоренції; далі потягом через Пізу і Ла-Спецію до Леванто й Монтероссо на Лігурійському узбережжі; на завершення потягом назад до Болоньї.">
+        <path class="sea" d="M24.0,535.9 L48.5,537.8 L87.9,549.4 L102.8,559.0 L113.7,564.7 L125.9,574.3 L140.9,583.9 L146.3,589.7 L150.4,591.6 L154.5,593.6 L157.2,597.4 L158.6,597.4 L173.5,607.0 L181.7,601.2 L199.3,608.9 L214.3,628.2 L227.9,641.6 L230.6,678.1 L236.0,703.1 L263.2,751.2 L268.6,780.0 L268.6,780.0 L24.0,780.0 Z"/>
+        <path class="sea" d="M615.2,280.3 L511.9,339.8 L503.8,382.1 L526.9,434.0 L499.7,485.9 L503.8,535.9 L520.1,578.2 L543.2,605.1 L589.4,633.9 L615.2,655.1 L615.2,655.1 L615.2,280.3 Z"/>
+        <path class="lake" d="M308.1,255.3 L312.1,270.6 L295.8,289.9 L286.3,305.2 L275.4,318.7 L272.7,334.1 L278.2,341.8 L291.7,337.9 L299.9,324.5 L310.8,305.2 L318.9,286.0 L316.2,264.9 Z"/>
+        <path class="leg leg--home" d="M170.5,596.1 L238.5,462.7 L376.4,521.7"/>
+        <path class="leg leg--car" d="M376.4,521.7 L319.6,492.3 L328.8,340.2 L335.2,253.4 L346.2,219.3 L377.9,136.5 L421.0,121.5"/>
+        <path class="leg leg--flo" d="M376.4,521.7 L364.6,660.8"/>
+        <path class="leg leg--sea" d="M364.6,660.8 L247.7,671.2 L170.5,596.1 L146.9,588.6"/>
+        <circle class="town" cx="328.8" cy="340.2" r="3.5"/>
+        <text class="ctx" x="320.8" y="357.2" text-anchor="end">Верона</text>
+        <circle class="town" cx="346.2" cy="219.3" r="3.5"/>
+        <text class="ctx" x="355.2" y="223.3" text-anchor="start">Тренто</text>
+        <circle class="town" cx="377.9" cy="136.5" r="3.5"/>
+        <text class="ctx" x="369.9" y="140.5" text-anchor="end">Больцано</text>
+        <circle class="town" cx="247.7" cy="671.2" r="3.5"/>
+        <text class="ctx" x="257.7" y="697.2" text-anchor="start">Піза</text>
+        <circle class="town" cx="170.5" cy="596.1" r="3.5"/>
+        <text class="ctx" x="160.5" y="616.1" text-anchor="end">Ла-Спеція</text>
+        <circle class="town" cx="238.5" cy="462.7" r="3.5"/>
+        <text class="ctx" x="238.5" y="452.7" text-anchor="middle">Парма</text>
+        <circle class="town" cx="511.9" cy="339.8" r="3.5"/>
+        <text class="ctx" x="501.9" y="344.8" text-anchor="end">Венеція</text>
+        <circle class="town" cx="48.5" cy="537.8" r="3.5"/>
+        <text class="ctx" x="57.5" y="530.8" text-anchor="start">Генуя</text>
+        <circle class="pin p--bologna" cx="376.4" cy="521.7" r="7"/>
+        <text class="lbl p--bologna" x="391.4" y="527.7" text-anchor="start">Болонья</text>
+        <circle class="pin p--gardena" cx="421.0" cy="121.5" r="7"/>
+        <text class="lbl p--gardena" x="436.0" y="126.5" text-anchor="start">Ортізеї</text>
+        <circle class="pin p--florence" cx="364.6" cy="660.8" r="7"/>
+        <text class="lbl p--florence" x="379.6" y="666.8" text-anchor="start">Флоренція</text>
+        <circle class="pin p--coast" cx="146.9" cy="588.6" r="7"/>
+        <text class="lbl p--coast" x="116.9" y="548.6">Леванто /</text>
+        <text class="lbl p--coast" x="116.9" y="574.6">Монтероссо</text>
+        <text class="water" x="119.1" y="724.3" text-anchor="middle">Лігурійське море</text>
+        <text class="water" x="583" y="430" text-anchor="middle" transform="rotate(90 583 430)">Адріатичне море</text>
+        <g class="key">
+          <path class="leg leg--car" d="M40,62 L86,62"/>
+          <text class="ctx" x="96" y="67">авто · 4–7 жовт.</text>
+          <path class="leg leg--rail-key" d="M40,94 L86,94"/>
+          <text class="ctx" x="96" y="99">потяг</text>
         </g>
-        <g class="grid">
-          <line x1="24" y1="153.1" x2="976" y2="153.1"/>
-          <line x1="24" y1="291.5" x2="976" y2="291.5"/>
-        </g>
-        <text class="alt" x="972" y="146" text-anchor="end">2 000 m</text>
-        <text class="alt" x="972" y="284" text-anchor="end">1 000 m</text>
-        <path class="profile__fill" d="M24,422.5 L119.2,422.5 L214.4,258.9 L309.6,81.2 L404.8,173.8 L500,423.1 L595.2,423.1 L690.4,423.1 L785.6,429.3 L880.8,402.3 L976,422.5 L976,430 L24,430 Z"/>
-        <path class="profile__line" d="M24,422.5 L119.2,422.5 L214.4,258.9 L309.6,81.2 L404.8,173.8 L500,423.1 L595.2,423.1 L690.4,423.1 L785.6,429.3 L880.8,402.3 L976,422.5"/>
-        <line class="baseline" x1="24" y1="430" x2="976" y2="430"/>
-        <circle class="dot dot--bologna"  cx="24"    cy="422.5" r="7"/>
-        <circle class="dot dot--gardena"  cx="309.6" cy="81.2"  r="7"/>
-        <circle class="dot dot--florence" cx="595.2" cy="423.1" r="7"/>
-        <circle class="dot dot--coast"    cx="785.6" cy="429.3" r="7"/>
-        <text class="peak" x="309.6" y="58" text-anchor="middle">SECEDA 2 519 M</text>
       </svg>
-
       <ul class="bases">
-        <li data-base="bologna"><a href="#day-02">Bologna</a><span>2–3 Oct</span></li>
-        <li data-base="gardena"><a href="#day-04">Val Gardena</a><span>4–6 Oct</span></li>
-        <li data-base="florence"><a href="#day-07">Florence</a><span>7–9 Oct</span></li>
-        <li data-base="coast"><a href="#day-10">Coast</a><span>10–11 Oct</span></li>
-        <li class="bases__out" aria-hidden="true"></li>
+        <li data-base="bologna"><a href="#day-02">Болонья</a><span>2–3 жовт.</span></li>
+        <li data-base="gardena"><a href="#day-04">Валь-Гардена</a><span>4–6 жовт.</span></li>
+        <li data-base="florence"><a href="#day-07">Флоренція</a><span>7–9 жовт.</span></li>
+        <li data-base="coast"><a href="#day-10">Узбережжя</a><span>10–11 жовт.</span></li>
       </ul>
-      <figcaption>Where we sleep, by altitude. 2,519 m at Seceda on the 5th; sea level on the 10th.</figcaption>
+      <figcaption>Де ми ночуємо. Авто лише на гірському відрізку — решта потягом. Від Сечеди 2&nbsp;519&nbsp;м до рівня моря в Чінкве-Терре.</figcaption>
     </figure>
   </div>
 </header>
 
-<nav class="nav" aria-label="Sections">
+<nav class="nav" aria-label="Розділи">
   <div class="nav__inner">
-    <a href="#glance">Glance</a>
-    <a href="#days">Days</a>
-    <a href="#transport">Transport</a>
-    <a href="#checklist">Checklist</a>
-    <a href="#know">Know</a>
+    <a href="#glance">Огляд</a>
+    <a href="#days">Дні</a>
+    <a href="#transport">Транспорт</a>
+    <a href="#checklist">Бронювання</a>
+    <a href="#know">Знати</a>
   </div>
 </nav>
 
 <main class="wrap">
 
-  <!-- ───────────────────────── 01 ───────────────────────── -->
   <section id="glance" class="sec">
     <p class="sec__num">01</p>
-    <h2 class="sec__h">At a glance</h2>
+    <h2 class="sec__h">Огляд</h2>
 
     <table class="glance">
-      <caption class="vh">Nights, dates, base and how we get there</caption>
+      <caption class="vh">Ночі, дати, база і як дістатися</caption>
       <thead>
-        <tr><th scope="col">Nights</th><th scope="col">Dates</th><th scope="col">Base</th><th scope="col">Getting there</th></tr>
+        <tr><th scope="col">Ночі</th><th scope="col">Дати</th><th scope="col">База</th><th scope="col">Як дістатися</th></tr>
       </thead>
       <tbody>
         <tr data-base="bologna">
-          <td data-label="night">1</td><td data-label="Dates">Oct 2</td>
-          <th scope="row" data-label="Base">Bologna <span class="sub">airport hotel</span></th>
-          <td data-label="Getting there">Land 23:40</td>
+          <td data-col="nights" data-unit="ніч">1</td><td data-col="dates">2 жовт.</td>
+          <th scope="row" data-col="base">Болонья <span class="sub">готель біля аеропорту</span></th>
+          <td data-col="via">Приліт 23:40</td>
         </tr>
         <tr data-base="bologna">
-          <td data-label="night">1</td><td data-label="Dates">Oct 3</td>
-          <th scope="row" data-label="Base">Bologna</th>
-          <td data-label="Getting there">—</td>
+          <td data-col="nights" data-unit="ніч">1</td><td data-col="dates">3 жовт.</td>
+          <th scope="row" data-col="base">Болонья</th>
+          <td data-col="via">—</td>
         </tr>
         <tr data-base="gardena">
-          <td data-label="nights">3</td><td data-label="Dates">Oct 4–6</td>
-          <th scope="row" data-label="Base">Ortisei <span class="sub">Val Gardena</span></th>
-          <td data-label="Getting there">Rental car from BLQ, ~4 h</td>
+          <td data-col="nights" data-unit="ночі">3</td><td data-col="dates">4–6 жовт.</td>
+          <th scope="row" data-col="base">Ортізеї <span class="sub">Валь-Гардена</span></th>
+          <td data-col="via">Авто з BLQ, ~4 год</td>
         </tr>
         <tr data-base="florence">
-          <td data-label="nights">3</td><td data-label="Dates">Oct 7–9</td>
-          <th scope="row" data-label="Base">Florence</th>
-          <td data-label="Getting there">Car back to Bologna, train ~35 min</td>
+          <td data-col="nights" data-unit="ночі">3</td><td data-col="dates">7–9 жовт.</td>
+          <th scope="row" data-col="base">Флоренція</th>
+          <td data-col="via">Авто назад до Болоньї, потяг ~35 хв</td>
         </tr>
         <tr data-base="coast">
-          <td data-label="nights">2</td><td data-label="Dates">Oct 10–11</td>
-          <th scope="row" data-label="Base">Levanto <span class="sub">or Monterosso</span></th>
-          <td data-label="Getting there">Train ~2.5 h via Pisa</td>
+          <td data-col="nights" data-unit="ночі">2</td><td data-col="dates">10–11 жовт.</td>
+          <th scope="row" data-col="base">Леванто <span class="sub">або Монтероссо</span></th>
+          <td data-col="via">Потяг ~2,5 год через Пізу</td>
         </tr>
         <tr data-base="transit">
-          <td data-label="nights">—</td><td data-label="Dates">Oct 12</td>
-          <th scope="row" data-label="Base">Fly out</th>
-          <td data-label="Getting there">Train La Spezia → Bologna, ~2–2.5 h</td>
+          <td data-col="nights">—</td><td data-col="dates">12 жовт.</td>
+          <th scope="row" data-col="base">Виліт</th>
+          <td data-col="via">Потяг Ла-Спеція → Болонья, ~2–2,5 год</td>
         </tr>
       </tbody>
     </table>
 
     <div class="flights">
-      <p><span class="flights__leg">Out</span> LEJ 18:40 → BLQ 23:40, Fri 2 Oct · one stop Frankfurt</p>
-      <p><span class="flights__leg">Back</span> BLQ 18:40 → LEJ 23:10, Mon 12 Oct · one stop Frankfurt</p>
+      <p><span class="flights__leg">Туди</span> LEJ 18:40 → BLQ 23:40, пт 2 жовт. · одна пересадка у Франкфурті</p>
+      <p><span class="flights__leg">Назад</span> BLQ 18:40 → LEJ 23:10, пн 12 жовт. · одна пересадка у Франкфурті</p>
     </div>
   </section>
 
-  <!-- ───────────────────────── 02 ───────────────────────── -->
   <section id="days" class="sec">
     <p class="sec__num">02</p>
-    <h2 class="sec__h">Day by day</h2>
-    <p class="sec__lede">Every day carries the bed it ends in.</p>
+    <h2 class="sec__h">День за днем</h2>
+    <p class="sec__lede">Кожен день несе ліжко, яким закінчується.</p>
 
     <ol class="timeline">
 
       <li class="day" data-base="bologna" data-date="2026-10-02" id="day-02">
-        <p class="day__date"><span class="day__dow">Fri</span> <span class="day__num">2</span> <span class="day__mon">Oct</span></p>
+        <p class="day__date"><span class="day__dow">пт</span> <span class="day__num">2</span> <span class="day__mon">жовт.</span></p>
         <div class="day__body">
-          <h3>Arrive</h3>
-          <p class="bed">Bologna <span>airport hotel</span></p>
-          <p>Land 23:40. Nothing else.</p>
+          <h3>Приліт</h3>
+          <p class="bed">Болонья <span>готель біля аеропорту</span></p>
+          <p>Приліт о 23:40. Більше нічого.</p>
         </div>
       </li>
 
       <li class="day" data-base="bologna" data-date="2026-10-03" id="day-03">
-        <p class="day__date"><span class="day__dow">Sat</span> <span class="day__num">3</span> <span class="day__mon">Oct</span></p>
+        <p class="day__date"><span class="day__dow">сб</span> <span class="day__num">3</span> <span class="day__mon">жовт.</span></p>
         <div class="day__body">
-          <h3>Bologna, slow</h3>
-          <p class="bed">Bologna</p>
-          <p>Piazza Maggiore, the Quadrilatero market — Saturday is its best day — the seven churches of Santo Stefano, and the Torre degli Asinelli climb on a timed ticket. Long dinner.</p>
+          <h3>Болонья, поволі</h3>
+          <p class="bed">Болонья</p>
+          <p>П'яцца Маджоре, ринок Квадрілатеро — субота його найкращий день — сім церков Санто-Стефано і підйом на вежу Азінеллі за квитком на час. Довга вечеря.</p>
 
-          <p class="sights__h">Museums &amp; architecture</p>
+          <p class="sights__h">Музеї та архітектура</p>
           <ul class="sights">
             <li>
-              <b>Basilica di San Petronio</b>
-              <p>The huge brick face on Piazza Maggiore, left unfinished in the 1500s and never resolved. Inside, Cassini's 1655 meridian line is inlaid the length of the floor.</p>
+              <b>Базиліка Сан-Петроніо</b>
+              <p>Величезний цегляний фасад на П'яцца Маджоре, залишений незавершеним у XVI столітті — так і не доробили. Усередині вздовж підлоги пролягає меридіанна лінія Кассіні 1655 року.</p>
             </li>
             <li>
-              <b>Archiginnasio &amp; Teatro Anatomico</b>
-              <p>First permanent home of the university. Walls papered in carved student coats of arms, and a 1637 anatomical theatre in spruce — reconstructed from the pieces after a 1944 bomb.</p>
+              <b>Аркіджинназіо та Анатомічний театр</b>
+              <p>Перший постійний дім університету. Стіни, обліплені різьбленими гербами студентів, і анатомічний театр 1637 року з ялини — відновлений з уламків після бомби 1944-го.</p>
             </li>
             <li>
-              <b>Santa Maria della Vita</b>
-              <p>Niccolò dell'Arca's terracotta Lamentation: six life-size mourners caught mid-cry. Ten minutes, and the best thing in the city.</p>
+              <b>Санта-Марія-делла-Віта</b>
+              <p>Теракотове «Оплакування» Ніколо дель'Арка: шестеро скорботних у натуральну величину, застиглі на півкрику. Десять хвилин — і найкраще в місті.</p>
             </li>
             <li>
-              <b>Pinacoteca Nazionale</b>
-              <p>The Bolognese school at home — Carracci, Reni, Guercino — plus Raphael's <em>Ecstasy of St Cecilia</em>.</p>
+              <b>Національна пінакотека</b>
+              <p>Болонська школа вдома — Карраччі, Рені, Гверчіно — плюс «Екстаз святої Цецилії» Рафаеля.</p>
             </li>
             <li>
-              <b>MAMbo &amp; Museo Morandi</b>
-              <p>Modern and contemporary art in the old municipal bakery. Morandi's bottles are upstairs.</p>
+              <b>MAMbo та Музей Моранді</b>
+              <p>Сучасне мистецтво в колишній міській пекарні. Пляшки Моранді — нагорі.</p>
             </li>
             <li>
-              <b>The porticoes</b>
-              <p>UNESCO-listed since 2021. The San Luca one climbs 3.8 km under 666 arches to the sanctuary on the hill — a half-day on its own.</p>
+              <b>Портики</b>
+              <p>У списку ЮНЕСКО з 2021 року. Портик Сан-Лука тягнеться 3,8 км під 666 арками до святилища на пагорбі — це пів дня саме по собі.</p>
             </li>
           </ul>
-          <p class="note">More than one day holds. Santa Maria della Vita, the Archiginnasio and San Petronio are the short list; they sit within a few minutes of each other.</p>
-          <p class="note">No car yet. The centre is one large ZTL.</p>
+          <p class="note">Більше, ніж вміщає один день. Санта-Марія-делла-Віта, Аркіджинназіо і Сан-Петроніо — короткий список; вони за кілька хвилин одне від одного.</p>
+          <p class="note">Авто ще немає. Центр — одна велика зона ZTL.</p>
         </div>
       </li>
 
       <li class="day" data-base="gardena" data-date="2026-10-04" id="day-04">
-        <p class="day__date"><span class="day__dow">Sun</span> <span class="day__num">4</span> <span class="day__mon">Oct</span></p>
+        <p class="day__date"><span class="day__dow">нд</span> <span class="day__num">4</span> <span class="day__mon">жовт.</span></p>
         <div class="day__body">
-          <h3>North</h3>
-          <p class="bed">Ortisei <span>first of three nights</span></p>
-          <p>Collect the rental at BLQ in the morning and drive to Ortisei — about 4 h on the A22 over the Brenner corridor. Afternoon in Val Gardena.</p>
+          <h3>На північ</h3>
+          <p class="bed">Ортізеї <span>перша з трьох ночей</span></p>
+          <p>Забрати авто в BLQ зранку і їхати до Ортізеї — близько 4 год трасою A22 через Бреннерський коридор. Пообіддя у Валь-Гардені.</p>
         </div>
       </li>
 
       <li class="day" data-base="gardena" data-date="2026-10-05" id="day-05">
-        <p class="day__date"><span class="day__dow">Mon</span> <span class="day__num">5</span> <span class="day__mon">Oct</span></p>
+        <p class="day__date"><span class="day__dow">пн</span> <span class="day__num">5</span> <span class="day__mon">жовт.</span></p>
         <div class="day__body">
-          <h3>Seceda</h3>
-          <p class="bed">Ortisei</p>
-          <p>The two-stage cableway from Ortisei via Furnes to roughly 2,500 m. Go up early for the ridge, before the light flattens.</p>
-          <p class="note">Season ends 11 Oct. Inside the window, but there is no slack.</p>
+          <h3>Сечеда</h3>
+          <p class="bed">Ортізеї</p>
+          <p>Двоступенева канатка з Ортізеї через Фурнес приблизно на 2 500 м. Підніматися рано, поки світло не сплющило хребет.</p>
+          <p class="note">Сезон завершується 11 жовтня. Ми в межах вікна, але запасу немає.</p>
         </div>
       </li>
 
       <li class="day" data-base="gardena" data-date="2026-10-06" id="day-06">
-        <p class="day__date"><span class="day__dow">Tue</span> <span class="day__num">6</span> <span class="day__mon">Oct</span></p>
+        <p class="day__date"><span class="day__dow">вт</span> <span class="day__num">6</span> <span class="day__mon">жовт.</span></p>
         <div class="day__body">
-          <h3>Alpe di Siusi &amp; Val di Funes</h3>
-          <p class="bed">Ortisei <span>last night in the mountains</span></p>
-          <p>Take the Compatsch gondola; the road up is closed to cars during the day. Afternoon at Santa Maddalena in Val di Funes for the classic church-and-Odle view.</p>
-          <p class="note">Swap for the Sella / Pordoi / Carezza pass loop, or Lago di Braies and Tre Cime, if the forecast favours it.</p>
+          <h3>Альпе-ді-Сьюзі та Валь-ді-Фунес</h3>
+          <p class="bed">Ортізеї <span>остання ніч у горах</span></p>
+          <p>Гондола на Компач; дорога нагору вдень закрита для авто. Пообіддя в Санта-Маддалені у Валь-ді-Фунес заради класичного виду церкви на тлі Оділе.</p>
+          <p class="note">Якщо прогноз кращий — замінити на кільце перевалів Селла / Пордої / Карецца або на Лаго-ді-Брайєс і Тре-Чіме.</p>
         </div>
       </li>
 
       <li class="day" data-base="florence" data-date="2026-10-07" id="day-07">
-        <p class="day__date"><span class="day__dow">Wed</span> <span class="day__num">7</span> <span class="day__mon">Oct</span></p>
+        <p class="day__date"><span class="day__dow">ср</span> <span class="day__num">7</span> <span class="day__mon">жовт.</span></p>
         <div class="day__body">
-          <h3>South to Florence</h3>
-          <p class="bed">Florence <span>first of three nights</span></p>
-          <p>Drive back to Bologna, about 4 h, drop the car at the station, train to Florence, about 35 min. Sunset at Piazzale Michelangelo.</p>
+          <h3>На південь, до Флоренції</h3>
+          <p class="bed">Флоренція <span>перша з трьох ночей</span></p>
+          <p>Назад до Болоньї, близько 4 год, здати авто на вокзалі, потяг до Флоренції — близько 35 хв. Захід сонця на П'яццале Мікеланджело.</p>
         </div>
       </li>
 
       <li class="day" data-base="florence" data-date="2026-10-08" id="day-08">
-        <p class="day__date"><span class="day__dow">Thu</span> <span class="day__num">8</span> <span class="day__mon">Oct</span></p>
+        <p class="day__date"><span class="day__dow">чт</span> <span class="day__num">8</span> <span class="day__mon">жовт.</span></p>
         <div class="day__body">
-          <h3>The big rooms</h3>
-          <p class="bed">Florence</p>
-          <p>The headline collections, all on timed tickets. One gallery in the morning, the Duomo complex in the afternoon.</p>
+          <h3>Великі зали</h3>
+          <p class="bed">Флоренція</p>
+          <p>Головні колекції, усі за квитками на час. Одна галерея зранку, комплекс Дуомо по обіді.</p>
 
-          <p class="sights__h">Museums &amp; architecture</p>
+          <p class="sights__h">Музеї та архітектура</p>
           <ul class="sights">
             <li>
-              <b>Uffizi <span class="tag">book ahead</span></b>
-              <p>Botticelli, Leonardo, and the Raphael and Titian rooms, in Vasari's office block along the Arno.</p>
+              <b>Уффіці <span class="tag">бронювати</span></b>
+              <p>Боттічеллі, Леонардо, зали Рафаеля і Тіціана — у конторському корпусі Вазарі вздовж Арно.</p>
             </li>
             <li>
-              <b>Accademia <span class="tag">book ahead</span></b>
-              <p>The David — and the unfinished <em>Prisoners</em> straining out of their blocks in the corridor before it.</p>
+              <b>Академія <span class="tag">бронювати</span></b>
+              <p>Давид — і незавершені «В'язні», що виборсуються з брил у коридорі перед ним.</p>
             </li>
             <li>
-              <b>Duomo complex <span class="tag">book ahead</span></b>
-              <p>Brunelleschi's dome, Giotto's campanile and the Baptistery on one pass. The dome climb is a separate reserved slot — 463 steps, no lift.</p>
+              <b>Комплекс Дуомо <span class="tag">бронювати</span></b>
+              <p>Купол Брунеллескі, дзвіниця Джотто і Баптистерій за одним квитком. Підйом на купол — окремий заброньований слот: 463 сходинки, ліфта немає.</p>
             </li>
             <li>
-              <b>Museo dell'Opera del Duomo</b>
-              <p>Where the originals went: Ghiberti's Gates of Paradise panels, Donatello's Magdalene, Michelangelo's Bandini Pietà. Quiet, and usually empty.</p>
+              <b>Музей Опера-дель-Дуомо</b>
+              <p>Куди поділися оригінали: панелі «Райських воріт» Гіберті, «Магдалина» Донателло, «П'єта Бандіні» Мікеланджело. Тихо і зазвичай порожньо.</p>
             </li>
             <li>
-              <b>Bargello</b>
-              <p>Sculpture in a 13th-century palace and prison. Donatello's two Davids, and the Ghiberti–Brunelleschi competition panels side by side.</p>
+              <b>Барджелло</b>
+              <p>Скульптура в палаці й тюрмі XIII століття. Два Давиди Донателло і конкурсні панелі Гіберті та Брунеллескі поруч.</p>
             </li>
           </ul>
-          <p class="note">Uffizi and Accademia on the same day is a lot of standing. Take one now and the other tomorrow.</p>
+          <p class="note">Уффіці й Академія в один день — це багато стояння. Взяти одну сьогодні, другу завтра.</p>
         </div>
       </li>
 
       <li class="day" data-base="florence" data-date="2026-10-09" id="day-09">
-        <p class="day__date"><span class="day__dow">Fri</span> <span class="day__num">9</span> <span class="day__mon">Oct</span></p>
+        <p class="day__date"><span class="day__dow">пт</span> <span class="day__num">9</span> <span class="day__mon">жовт.</span></p>
         <div class="day__body">
-          <h3>Florence, slower</h3>
-          <p class="bed">Florence</p>
-          <p>Oltrarno and the artisan workshops, then Boboli or Bardini for the afternoon.</p>
+          <h3>Флоренція, повільніше</h3>
+          <p class="bed">Флоренція</p>
+          <p>Ольтрарно і майстерні ремісників, потім Боболі або Бардіні на пообіддя.</p>
 
-          <p class="sights__h">Museums &amp; architecture</p>
+          <p class="sights__h">Музеї та архітектура</p>
           <ul class="sights">
             <li>
-              <b>Brancacci Chapel <span class="tag">book ahead</span></b>
-              <p>Masaccio's frescoes — the moment painting worked out perspective and grief at the same time. Small timed groups, so it goes early.</p>
+              <b>Капела Бранкаччі <span class="tag">бронювати</span></b>
+              <p>Фрески Мазаччо — момент, коли живопис розібрався і з перспективою, і з горем водночас. Малі групи на час, тож розбирають рано.</p>
             </li>
             <li>
-              <b>Santo Spirito</b>
-              <p>Brunelleschi's last church. The front is bare plaster; the argument is all inside, in the colonnade.</p>
+              <b>Санто-Спіріто</b>
+              <p>Остання церква Брунеллескі. Ззовні — голий тиньк; уся суперечка всередині, у колонаді.</p>
             </li>
             <li>
-              <b>Palazzo Pitti &amp; Palatine Gallery</b>
-              <p>Raphaels and Titians hung frame-to-frame up the wall, the way a grand duke would have had them. Boboli is the same ticket.</p>
+              <b>Палаццо Пітті та Палатинська галерея</b>
+              <p>Рафаелі й Тіціани, розвішані рама до рами вгору по стіні — так, як тримав би їх великий герцог. Боболі — той самий квиток.</p>
             </li>
             <li>
-              <b>Medici Chapels &amp; Laurentian Library</b>
-              <p>Michelangelo twice at San Lorenzo: the New Sacristy with <em>Night</em> and <em>Day</em>, and the library vestibule staircase that pours down at you.</p>
+              <b>Капели Медічі та Лауренціанська бібліотека</b>
+              <p>Мікеланджело двічі в Сан-Лоренцо: Нова сакристія з «Ніччю» і «Днем» та вестибюль бібліотеки зі сходами, що виливаються на тебе.</p>
             </li>
             <li>
-              <b>Santa Croce</b>
-              <p>Michelangelo, Galileo and Machiavelli in the nave; Brunelleschi's Pazzi Chapel out in the cloister.</p>
+              <b>Санта-Кроче</b>
+              <p>Мікеланджело, Галілей і Макіавеллі в нефі; капела Пацці Брунеллескі — у дворі.</p>
             </li>
             <li>
-              <b>Santa Maria Novella</b>
-              <p>Alberti's façade — the first to solve the wide-nave-narrow-aisles problem with scrolls. Masaccio's <em>Trinity</em> on the left wall.</p>
+              <b>Санта-Марія-Новелла</b>
+              <p>Фасад Альберті — перший, що розв'язав задачу широкого нефа й вузьких бічних за допомогою волют. «Трійця» Мазаччо на лівій стіні.</p>
             </li>
           </ul>
-          <p class="note">An Oltrarno morning plus two of these is a full day. Don't try for four.</p>
-          <p class="note">Optional day out to Siena and Chianti instead.</p>
+          <p class="note">Ранок в Ольтрарно плюс дві з цих — повний день. Не братися за чотири.</p>
+          <p class="note">Або цілий день у Сієні та К'янті.</p>
         </div>
       </li>
 
       <li class="day" data-base="coast" data-date="2026-10-10" id="day-10">
-        <p class="day__date"><span class="day__dow">Sat</span> <span class="day__num">10</span> <span class="day__mon">Oct</span></p>
+        <p class="day__date"><span class="day__dow">сб</span> <span class="day__num">10</span> <span class="day__mon">жовт.</span></p>
         <div class="day__body">
-          <h3>The coast</h3>
-          <p class="bed">Levanto <span>or Monterosso · two nights</span></p>
-          <p>Train to La Spezia, about 2.5 h, usually changing in Pisa, then onward to the base. Afternoon village-hopping on the Cinque Terre Express.</p>
+          <h3>На узбережжя</h3>
+          <p class="bed">Леванто <span>або Монтероссо · дві ночі</span></p>
+          <p>Потяг до Ла-Спеції, близько 2,5 год, зазвичай із пересадкою в Пізі, далі до бази. Пообіддя — стрибати між селами на Cinque Terre Express.</p>
         </div>
       </li>
 
       <li class="day" data-base="coast" data-date="2026-10-11" id="day-11">
-        <p class="day__date"><span class="day__dow">Sun</span> <span class="day__num">11</span> <span class="day__mon">Oct</span></p>
+        <p class="day__date"><span class="day__dow">нд</span> <span class="day__num">11</span> <span class="day__mon">жовт.</span></p>
         <div class="day__body">
-          <h3>Cinque Terre, full day</h3>
-          <p class="bed">Levanto <span>or Monterosso</span></p>
-          <p>Walk Vernazza → Monterosso, 1.5–2 h, steep in places and easier in that direction. Via dell'Amore in a booked slot. Train between the rest.</p>
+          <h3>Чінкве-Терре, повний день</h3>
+          <p class="bed">Леванто <span>або Монтероссо</span></p>
+          <p>Пройти Вернацца → Монтероссо, 1,5–2 год, місцями круто і легше саме в цьому напрямку. Via dell'Amore — у заброньований слот. Між рештою — потягом.</p>
         </div>
       </li>
 
       <li class="day" data-base="transit" data-date="2026-10-12" id="day-12">
-        <p class="day__date"><span class="day__dow">Mon</span> <span class="day__num">12</span> <span class="day__mon">Oct</span></p>
+        <p class="day__date"><span class="day__dow">пн</span> <span class="day__num">12</span> <span class="day__mon">жовт.</span></p>
         <div class="day__body">
-          <h3>Home</h3>
-          <p class="bed">No bed <span>flight 18:40</span></p>
-          <p>Late-morning train La Spezia → Bologna, about 2–2.5 h. Lunch in Bologna, then out to the airport.</p>
-          <p class="note">It's a Monday, so the Pinacoteca and MAMbo are shut. San Petronio, Santo Stefano and the porticoes are open — churches and streets, not museums.</p>
-          <p class="note">Keep the afternoon as buffer.</p>
+          <h3>Додому</h3>
+          <p class="bed">Без ночівлі <span>виліт 18:40</span></p>
+          <p>Пізньоранковий потяг Ла-Спеція → Болонья, близько 2–2,5 год. Обід у Болоньї, потім в аеропорт.</p>
+          <p class="note">Це понеділок, тож Пінакотека і MAMbo зачинені. Сан-Петроніо, Санто-Стефано і портики відкриті — церкви й вулиці, не музеї.</p>
+          <p class="note">Лишити пообіддя як запас.</p>
         </div>
       </li>
 
     </ol>
   </section>
 
-  <!-- ───────────────────────── 03 ───────────────────────── -->
   <section id="transport" class="sec">
     <p class="sec__num">03</p>
-    <h2 class="sec__h">Transport</h2>
+    <h2 class="sec__h">Транспорт</h2>
 
     <div class="card" data-base="gardena">
-      <h3>Car for 4–7 October only</h3>
-      <p>Pick up and return at Bologna, so there is no one-way fee. The Dolomites genuinely need a car. Nothing else on this route does.</p>
+      <h3>Авто лише 4–7 жовтня</h3>
+      <p>Забираємо і повертаємо в Болоньї, тож без збору за одностороннє. Доломітам авто справді потрібне. Більше нічому на цьому маршруті — ні.</p>
     </div>
 
     <div class="card" data-base="florence">
-      <h3>Why not keep it</h3>
-      <p>Florence's ZTL is camera-enforced and the fines arrive months later through the rental company. Garage parking runs €25–35 a day. The Cinque Terre villages are ZTL with small, expensive lots. Nine rental days to use it for three.</p>
+      <h3>Чому не лишати його</h3>
+      <p>ZTL у Флоренції контролюють камери, а штрафи приходять через місяці через прокатну компанію. Гаражна парковка — 25–35 € на добу. Села Чінкве-Терре — теж ZTL, з малими й дорогими стоянками. Дев'ять днів прокату, щоб користуватися три.</p>
     </div>
 
     <div class="card" data-base="coast">
-      <h3>Cinque Terre trains</h3>
-      <p>The Cinque Terre Express runs every 15–20 min along La&nbsp;Spezia – Riomaggiore – Manarola – Corniglia – Vernazza – Monterosso – Levanto. Village to village is 3–8 min. The Cinque Terre Treno Card covers unlimited rides.</p>
+      <h3>Потяги Чінкве-Терре</h3>
+      <p>Cinque Terre Express ходить кожні 15–20 хв. Між селами 3–8 хв. Cinque Terre Treno Card покриває необмежену кількість поїздок.</p>
     </div>
 
-    <h3 class="sub-h">Base choice on the coast</h3>
-    <p class="sec__lede">Central is not a requirement.</p>
+    <figure class="line">
+      <svg viewBox="0 0 460 580" class="line__svg" role="img"
+           aria-label="Схема залізничної лінії Чінкве-Терре від Леванто до Ла-Спеції з сімома зупинками та станом прибережних стежок між ними.">
+        <line class="rail" x1="58" y1="44" x2="58" y2="536"/>
+        <circle class="stop" cx="58" cy="44" r="7"/>
+        <text class="stop__t" x="78" y="51">Леванто</text>
+        <circle class="stop" cx="58" cy="126" r="7"/>
+        <text class="stop__t" x="78" y="133">Монтероссо</text>
+        <circle class="stop" cx="58" cy="208" r="7"/>
+        <text class="stop__t" x="78" y="215">Вернацца</text>
+        <circle class="stop" cx="58" cy="290" r="7"/>
+        <text class="stop__t" x="78" y="297">Корнілья</text>
+        <circle class="stop" cx="58" cy="372" r="7"/>
+        <text class="stop__t" x="78" y="379">Манарола</text>
+        <circle class="stop" cx="58" cy="454" r="7"/>
+        <text class="stop__t" x="78" y="461">Ріомаджоре</text>
+        <circle class="stop" cx="58" cy="536" r="7"/>
+        <text class="stop__t" x="78" y="543">Ла-Спеція</text>
+        <text class="gap" x="78" y="81.0">5 хв</text>
+        <text class="gap" x="78" y="163.0">4 хв</text>
+        <path class="trail trail--open" d="M36,141.0 L36,189.0"/>
+        <text class="gap gap--open" x="78" y="182.0">стежка відкрита · 1,5–2 год</text>
+        <text class="gap" x="78" y="245.0">3 хв</text>
+        <path class="trail trail--open" d="M36,223.0 L36,271.0"/>
+        <text class="gap gap--open" x="78" y="264.0">стежка відкрита</text>
+        <text class="gap" x="78" y="327.0">3 хв</text>
+        <path class="trail trail--shut" d="M36,305.0 L36,353.0"/>
+        <text class="gap gap--shut" x="78" y="346.0">стежка закрита надовго</text>
+        <text class="gap" x="78" y="409.0">3 хв</text>
+        <path class="trail trail--amore" d="M36,387.0 L36,435.0"/>
+        <text class="gap gap--amore" x="78" y="428.0">Via dell'Amore · слот</text>
+        <text class="gap" x="78" y="491.0">8 хв</text>
+      </svg>
+      <figcaption>Лінія від Леванто до Ла-Спеції, з часом у дорозі та станом прибережних стежок. Вернацца&nbsp;→&nbsp;Монтероссо — та, яку варто пройти.</figcaption>
+    </figure>
+
+    <h3 class="sub-h">Вибір бази на узбережжі</h3>
+    <p class="sec__lede">Бути в центрі — не вимога.</p>
     <dl class="options">
-      <div>
-        <dt>Levanto</dt>
-        <dd>Flat, cheaper, restaurants that aren't tourist-priced. 5 min by train to Monterosso.</dd>
-      </div>
-      <div>
-        <dt>La Spezia</dt>
-        <dd>Cheapest, most rooms, best rail connections. 8 min to Riomaggiore.</dd>
-      </div>
-      <div>
-        <dt>Monterosso</dt>
-        <dd>Most convenient inside the park, and the only village without punishing stairs — which matters with suitcases.</dd>
-      </div>
+      <div><dt>Леванто</dt><dd>Рівний, дешевший, ресторани без туристичних цін. 5 хв потягом до Монтероссо.</dd></div>
+      <div><dt>Ла-Спеція</dt><dd>Найдешевше, найбільше номерів, найкращі залізничні сполучення. 8 хв до Ріомаджоре.</dd></div>
+      <div><dt>Монтероссо</dt><dd>Найзручніше всередині парку і єдине село без нищівних сходів — що важливо з валізами.</dd></div>
     </dl>
   </section>
 
-  <!-- ───────────────────────── 04 ───────────────────────── -->
   <section id="checklist" class="sec">
     <p class="sec__num">04</p>
-    <h2 class="sec__h">Booking checklist</h2>
-    <p class="sec__lede">Ticks are kept on this device.</p>
+    <h2 class="sec__h">Що забронювати</h2>
+    <p class="sec__lede">Позначки зберігаються на цьому пристрої.</p>
 
     <div class="progress">
-      <p class="progress__text"><span id="progress-count">0</span> of <span id="progress-total">15</span> booked</p>
+      <p class="progress__text"><span id="progress-count">0</span> з <span id="progress-total">15</span> заброньовано</p>
       <div class="progress__track"><div class="progress__bar" id="progress-bar"></div></div>
-      <button type="button" class="reset" id="reset">Clear all</button>
+      <button type="button" class="reset" id="reset">Очистити все</button>
     </div>
 
     <ul class="check" id="check">
-      <li><label><input type="checkbox" data-key="flights"><span class="box" aria-hidden="true"></span><span class="txt">Flights LEJ–BLQ, round trip <em>from €237 economy at time of checking</em></span></label></li>
-      <li><label><input type="checkbox" data-key="car"><span class="box" aria-hidden="true"></span><span class="txt">Rental car — BLQ pickup 4 Oct morning, Bologna return 7 Oct <em>check winter-tyre rules for the passes</em></span></label></li>
-      <li><label><input type="checkbox" data-key="hotel-blq"><span class="box" aria-hidden="true"></span><span class="txt">Hotel Bologna airport, 2 Oct</span></label></li>
-      <li><label><input type="checkbox" data-key="hotel-bologna"><span class="box" aria-hidden="true"></span><span class="txt">Hotel Bologna, 3 Oct</span></label></li>
-      <li><label><input type="checkbox" data-key="hotel-ortisei"><span class="box" aria-hidden="true"></span><span class="txt">Hotel Ortisei / Val Gardena, 4–6 Oct <em>3 nights</em></span></label></li>
-      <li><label><input type="checkbox" data-key="hotel-florence"><span class="box" aria-hidden="true"></span><span class="txt">Hotel Florence, 7–9 Oct <em>3 nights</em></span></label></li>
-      <li><label><input type="checkbox" data-key="hotel-coast"><span class="box" aria-hidden="true"></span><span class="txt">Hotel Levanto / Monterosso, 10–11 Oct <em>2 nights</em></span></label></li>
-      <li><label><input type="checkbox" data-key="seceda"><span class="box" aria-hidden="true"></span><span class="txt">Seceda cableway, seceda.it <em>Ortisei–Furnes–Seceda · last operating day 11 Oct</em></span></label></li>
-      <li><label><input type="checkbox" data-key="asinelli"><span class="box" aria-hidden="true"></span><span class="txt">Torre degli Asinelli slot, Bologna</span></label></li>
-      <li><label><input type="checkbox" data-key="uffizi"><span class="box" aria-hidden="true"></span><span class="txt">Uffizi and / or Accademia timed tickets, Florence</span></label></li>
-      <li><label><input type="checkbox" data-key="duomo"><span class="box" aria-hidden="true"></span><span class="txt">Duomo complex pass incl. dome-climb slot, Florence <em>duomo.firenze.it · the climb is reserved separately from the pass</em></span></label></li>
-      <li><label><input type="checkbox" data-key="brancacci"><span class="box" aria-hidden="true"></span><span class="txt">Brancacci Chapel slot, Florence <em>small timed groups — books out first</em></span></label></li>
-      <li><label><input type="checkbox" data-key="ct-card"><span class="box" aria-hidden="true"></span><span class="txt">Cinque Terre Card incl. Via dell'Amore slot <em>card.parconazionale5terre.it</em></span></label></li>
-      <li><label><input type="checkbox" data-key="trains"><span class="box" aria-hidden="true"></span><span class="txt">Trains — Bologna–Florence, Florence–La Spezia, La Spezia–Bologna</span></label></li>
-      <li><label><input type="checkbox" data-key="insurance"><span class="box" aria-hidden="true"></span><span class="txt">Travel insurance / EHIC cards</span></label></li>
+      <li><label><input type="checkbox" data-key="flights"><span class="box" aria-hidden="true"></span><span class="txt">Квитки LEJ–BLQ, туди й назад <em>від 237 € економ на момент перевірки</em></span></label></li>
+      <li><label><input type="checkbox" data-key="car"><span class="box" aria-hidden="true"></span><span class="txt">Прокат авто — забрати в BLQ зранку 4 жовт., повернути в Болоньї 7 жовт. <em>перевірити правила щодо зимових шин на перевалах</em></span></label></li>
+      <li><label><input type="checkbox" data-key="hotel-blq"><span class="box" aria-hidden="true"></span><span class="txt">Готель Болонья, аеропорт, 2 жовт.</span></label></li>
+      <li><label><input type="checkbox" data-key="hotel-bologna"><span class="box" aria-hidden="true"></span><span class="txt">Готель Болонья, 3 жовт.</span></label></li>
+      <li><label><input type="checkbox" data-key="hotel-ortisei"><span class="box" aria-hidden="true"></span><span class="txt">Готель Ортізеї / Валь-Гардена, 4–6 жовт. <em>3 ночі</em></span></label></li>
+      <li><label><input type="checkbox" data-key="hotel-florence"><span class="box" aria-hidden="true"></span><span class="txt">Готель Флоренція, 7–9 жовт. <em>3 ночі</em></span></label></li>
+      <li><label><input type="checkbox" data-key="hotel-coast"><span class="box" aria-hidden="true"></span><span class="txt">Готель Леванто / Монтероссо, 10–11 жовт. <em>2 ночі</em></span></label></li>
+      <li><label><input type="checkbox" data-key="seceda"><span class="box" aria-hidden="true"></span><span class="txt">Канатка Сечеда, seceda.it <em>Ортізеї–Фурнес–Сечеда · останній робочий день 11 жовт.</em></span></label></li>
+      <li><label><input type="checkbox" data-key="asinelli"><span class="box" aria-hidden="true"></span><span class="txt">Слот на вежу Азінеллі, Болонья</span></label></li>
+      <li><label><input type="checkbox" data-key="uffizi"><span class="box" aria-hidden="true"></span><span class="txt">Квитки на час: Уффіці та / або Академія, Флоренція</span></label></li>
+      <li><label><input type="checkbox" data-key="duomo"><span class="box" aria-hidden="true"></span><span class="txt">Квиток у комплекс Дуомо зі слотом на підйом на купол, Флоренція <em>duomo.firenze.it · підйом бронюється окремо від квитка</em></span></label></li>
+      <li><label><input type="checkbox" data-key="brancacci"><span class="box" aria-hidden="true"></span><span class="txt">Слот у капелу Бранкаччі, Флоренція <em>малі групи на час — розбирають першими</em></span></label></li>
+      <li><label><input type="checkbox" data-key="ct-card"><span class="box" aria-hidden="true"></span><span class="txt">Cinque Terre Card зі слотом Via dell'Amore <em>card.parconazionale5terre.it</em></span></label></li>
+      <li><label><input type="checkbox" data-key="trains"><span class="box" aria-hidden="true"></span><span class="txt">Потяги: Болонья–Флоренція, Флоренція–Ла-Спеція, Ла-Спеція–Болонья</span></label></li>
+      <li><label><input type="checkbox" data-key="insurance"><span class="box" aria-hidden="true"></span><span class="txt">Страхування / картки EHIC</span></label></li>
     </ul>
   </section>
 
-  <!-- ───────────────────────── 05 ───────────────────────── -->
   <section id="know" class="sec">
     <p class="sec__num">05</p>
-    <h2 class="sec__h">Things to know</h2>
+    <h2 class="sec__h">Що варто знати</h2>
 
     <dl class="know">
       <div>
-        <dt>Seceda cableway season</dt>
-        <dd>Ortisei–Furnes–Seceda runs 16.05.–11.10.2026, and the Gardena Card is valid to 11.10.2026 as well. Everything mountain-related has to happen before that date.</dd>
+        <dt>Сезон канатки Сечеда</dt>
+        <dd>Ортізеї–Фурнес–Сечеда працює 16.05–11.10.2026. Gardena Card теж дійсна до 11.10.2026. Усе, що стосується гір, має статися до цієї дати.</dd>
       </div>
       <div>
-        <dt>Alpe di Siusi road</dt>
-        <dd>Closed to cars during daytime hours. Use the Compatsch gondola.</dd>
+        <dt>Дорога на Альпе-ді-Сьюзі</dt>
+        <dd>Удень закрита для авто. Користуватися гондолою на Компач.</dd>
       </div>
       <div>
         <dt>Cinque Terre Card</dt>
-        <dd>Required 14 March – 2 November 2026.</dd>
+        <dd>Обов'язкова з 14 березня до 2 листопада 2026.</dd>
       </div>
       <div>
         <dt>Via dell'Amore</dt>
-        <dd>Needs a booked 30-minute slot, is one-way Riomaggiore → Manarola, and is included in the standard card as of March 2026. Slots are not reliably refundable — check the forecast the day before and commit.</dd>
+        <dd>Потрібен заброньований 30-хвилинний слот, рух односторонній Ріомаджоре → Манарола, і з березня 2026 вона входить у стандартну картку. Слоти надійно не повертають — перевірити прогноз напередодні й вирішити.</dd>
       </div>
       <div>
-        <dt>Trail status</dt>
-        <dd>Manarola–Corniglia stays closed long-term. Vernazza–Monterosso is fully open and is the stretch worth walking. Corniglia–Vernazza is also open.</dd>
+        <dt>Стан стежок</dt>
+        <dd>Манарола–Корнілья закрита надовго. Вернацца–Монтероссо повністю відкрита — саме її варто пройти. Корнілья–Вернацца теж відкрита.</dd>
       </div>
       <div>
-        <dt>Museum closing days</dt>
-        <dd>Most Italian state museums shut on Mondays — the Uffizi, the Accademia, Bologna's Pinacoteca and MAMbo among them. The city days here are a Saturday and a Thursday–Friday, so they are all clear; only the fly-out Monday is affected. Churches keep their own hours and generally stay open.</dd>
+        <dt>Дні, коли музеї зачинені</dt>
+        <dd>Більшість державних музеїв Італії зачинені в понеділок — серед них Уффіці, Академія, болонська Пінакотека і MAMbo. Міські дні тут — субота і четвер–п'ятниця, тож усі вільні; зачіпає лише понеділок вильоту. Церкви живуть за власним розкладом і зазвичай відкриті.</dd>
       </div>
       <div>
-        <dt>Weather</dt>
-        <dd>Early October in the Dolomites can bring first snow above 2,000 m, and daylight is getting short. The cities stay mild. Pack for both.</dd>
+        <dt>Погода</dt>
+        <dd>На початку жовтня в Доломітах може випасти перший сніг вище 2 000 м, а світловий день коротшає. У містах лишається м'яко. Пакуватися на обидва варіанти.</dd>
       </div>
       <div class="know--warn">
         <dt>ZTL</dt>
-        <dd>Applies in the Bologna and Florence centres. Never drive in.</dd>
+        <dd>Діє в центрах Болоньї та Флоренції. Ніколи не в'їжджати.</dd>
       </div>
     </dl>
   </section>
@@ -440,8 +476,8 @@
 
 <footer class="foot">
   <div class="wrap">
-    <p>Ten nights · four bases · 2,519 m to sea level</p>
-    <p class="foot__sig">Leipzig → Bologna → Ortisei → Florence → Cinque Terre → Bologna → Leipzig</p>
+    <p>Десять ночей · чотири бази · від Доломітів до моря</p>
+    <p class="foot__sig">Лейпциг → Болонья → Ортізеї → Флоренція → Чінкве-Терре → Болонья → Лейпциг</p>
   </div>
 </footer>
 

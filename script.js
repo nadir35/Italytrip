@@ -1,6 +1,6 @@
-/* Italy · 2–12 October 2026
-   Three small jobs: the countdown, the checklist, the section marker.
-   No dependencies, nothing fetched. */
+/* Італія · 2–12 жовтня 2026
+   Три невеликі задачі: відлік, чекліст, позначка розділу.
+   Без залежностей, нічого не завантажується. */
 
 (function () {
   'use strict';
@@ -41,33 +41,41 @@
 
     if (toGo > 1) {
       num = String(toGo);
-      label = 'days until departure';
+      label = plural(toGo) + ' до вильоту';
     } else if (toGo === 1) {
       num = '1';
-      label = 'day until departure — pack tonight';
+      label = 'день до вильоту — пакуватися сьогодні';
     } else if (toGo === 0) {
-      num = 'Today';
+      num = 'Сьогодні';
       label = 'LEJ 18:40 → BLQ 23:40';
     } else if (left > 0) {
-      num = 'Day ' + (1 - toGo);
-      label = 'of 11 · ' + (nightLabel(today) || 'on the road');
+      num = 'День ' + (1 - toGo);
+      label = 'з 11 · ' + (nightLabel(today) || 'у дорозі');
     } else if (left === 0) {
-      num = 'Home';
+      num = 'Додому';
       label = 'BLQ 18:40 → LEJ 23:10';
     } else {
-      num = 'Done';
-      label = 'ten nights, four bases';
+      num = 'Готово';
+      label = 'десять ночей, чотири бази';
     }
 
     numEl.textContent = num;
     labEl.textContent = label;
   }
 
+  /* день / дні / днів */
+  function plural(n) {
+    var ten = n % 10, hundred = n % 100;
+    if (ten === 1 && hundred !== 11) return 'день';
+    if (ten >= 2 && ten <= 4 && (hundred < 12 || hundred > 14)) return 'дні';
+    return 'днів';
+  }
+
   function nightLabel(today) {
     var card = document.querySelector('.day[data-date="' + iso(today) + '"]');
     if (!card) return '';
     var bed = card.querySelector('.bed');
-    return bed ? bed.textContent.replace(/^Tonight\s*/, '').trim() : '';
+    return bed ? bed.textContent.replace(/^Ночуємо\s*/, '').trim() : '';
   }
 
   /* --- today's card ------------------------------------------------ */
@@ -86,7 +94,7 @@
 
   function writeStore(key, value) {
     try { window.localStorage.setItem(STORE + key, value); }
-    catch (e) { /* private mode, full quota — the page still works */ }
+    catch (e) { /* приватний режим або переповнене сховище — сторінка працює далі */ }
   }
 
   function dropStore(key) {
