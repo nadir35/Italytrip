@@ -6,7 +6,14 @@
 <title>Італія · 2–12 жовтня 2026</title>
 <meta name="description" content="Десять ночей, чотири бази: Верона, Валь-Гардена, Флоренція, Чінкве-Терре. Приліт у Верону, виліт з Болоньї.">
 <meta name="theme-color" content="#2B3138">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=3">
+<style>
+/* Critical: keep this inline. A stale cached style.css must never be able to
+   show both languages at once — this rule ships with the HTML, which is always
+   fresh, so the page degrades to one language no matter what the cache holds. */
+html[data-lang="uk"] body [lang="en"]{display:none}
+html[data-lang="en"] body [lang="uk"]{display:none}
+</style>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%232B3138'/><path d='M3 24 L11 9 L16 17 L21 12 L29 24 Z' fill='%23E4E2DC'/></svg>">
 </head>
 <body>
@@ -748,6 +755,6 @@
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script src="script.js?v=3"></script>
 </body>
 </html>
