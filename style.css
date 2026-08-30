@@ -153,6 +153,7 @@ html[data-lang="en"] body [lang="uk"]{display:none}
 .leg--flo{stroke:var(--portico);stroke-width:3.5;stroke-dasharray:9 7}
 .leg--sea{stroke:var(--sea);stroke-width:3.5;stroke-dasharray:9 7}
 .leg--home{stroke:var(--slate);stroke-opacity:.3;stroke-width:2.5;stroke-dasharray:5 8}
+.leg--spur{stroke:var(--meadow);stroke-width:3;stroke-dasharray:6 5}
 .leg--rail-key{stroke:var(--slate);stroke-opacity:.55;stroke-width:3.5;stroke-dasharray:9 7}
 
 .pin{stroke:var(--limestone);stroke-width:3.5}
@@ -162,6 +163,7 @@ html[data-lang="en"] body [lang="uk"]{display:none}
 .p--coast   {fill:var(--sea)}
 .exit{fill:var(--limestone);stroke:var(--slate);stroke-width:3.5;stroke-opacity:.65}
 .town{fill:var(--slate);fill-opacity:.42}
+.stop-garda{fill:var(--meadow);stroke:var(--limestone);stroke-width:2.5}
 
 .map__svg text{font-family:var(--body);fill:var(--slate)}
 .lbl {font-size:25px;font-weight:600}
