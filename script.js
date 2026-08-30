@@ -1,5 +1,6 @@
-/* Італія · 2–12 жовтня 2026
-   Три невеликі задачі: відлік, чекліст, позначка розділу.
+/* Італія · 2–12 жовтня 2026 — Italy · 2–12 October 2026
+   Чотири задачі: мова, відлік, чекліст, позначка розділу.
+   Four jobs: language, countdown, checklist, section marker.
    Без залежностей, нічого не завантажується. */
 
 (function () {
@@ -8,6 +9,67 @@
   var DEPART = '2026-10-02';
   var RETURN = '2026-10-12';
   var STORE  = 'italy-oct-2026:';
+  var LANGKEY = STORE + 'lang';
+
+  var lang = 'uk';
+
+  /* --- storage ----------------------------------------------------- */
+
+  function read(key) {
+    try { return window.localStorage.getItem(STORE + key); } catch (e) { return null; }
+  }
+  function write(key, value) {
+    try { window.localStorage.setItem(STORE + key, value); } catch (e) { /* приватний режим */ }
+  }
+  function drop(key) {
+    try { window.localStorage.removeItem(STORE + key); } catch (e) { /* ignore */ }
+  }
+
+  /* --- language ---------------------------------------------------- */
+
+  var TITLE = {
+    uk: 'Італія · 2–12 жовтня 2026',
+    en: 'Italy · 2–12 October 2026'
+  };
+
+  function initialLang() {
+    var saved;
+    try { saved = window.localStorage.getItem(LANGKEY); } catch (e) { saved = null; }
+    if (saved === 'uk' || saved === 'en') return saved;
+    var nav = (navigator.language || '').toLowerCase();
+    return nav.indexOf('en') === 0 ? 'en' : 'uk';
+  }
+
+  function setLang(next, persist) {
+    lang = (next === 'en') ? 'en' : 'uk';
+    var root = document.documentElement;
+    root.setAttribute('data-lang', lang);
+    root.setAttribute('lang', lang);
+    document.title = TITLE[lang];
+    var buttons = document.querySelectorAll('[data-set-lang]');
+    Array.prototype.forEach.call(buttons, function (b) {
+      b.setAttribute('aria-pressed', b.getAttribute('data-set-lang') === lang ? 'true' : 'false');
+    });
+    /* point each figure's accessible name at the description in this language */
+    var figures = document.querySelectorAll('[data-desc-uk]');
+    Array.prototype.forEach.call(figures, function (f) {
+      var id = f.getAttribute('data-desc-' + lang);
+      if (id) f.setAttribute('aria-labelledby', id);
+    });
+    if (persist) {
+      try { window.localStorage.setItem(LANGKEY, lang); } catch (e) { /* ignore */ }
+    }
+    countdown();
+  }
+
+  function wireLang() {
+    var buttons = document.querySelectorAll('[data-set-lang]');
+    Array.prototype.forEach.call(buttons, function (b) {
+      b.addEventListener('click', function () {
+        setLang(b.getAttribute('data-set-lang'), true);
+      });
+    });
+  }
 
   /* --- dates ------------------------------------------------------- */
 
@@ -16,14 +78,18 @@
            String(d.getMonth() + 1).padStart(2, '0') + '-' +
            String(d.getDate()).padStart(2, '0');
   }
-
   function midnight(s) {
     var p = s.split('-');
     return new Date(+p[0], +p[1] - 1, +p[2]);
   }
+  function daysBetween(a, b) { return Math.round((b - a) / 86400000); }
 
-  function daysBetween(a, b) {
-    return Math.round((b - a) / 86400000);
+  /* день / дні / днів */
+  function pluralUk(n) {
+    var ten = n % 10, hundred = n % 100;
+    if (ten === 1 && hundred !== 11) return 'день';
+    if (ten >= 2 && ten <= 4 && (hundred < 12 || hundred > 14)) return 'дні';
+    return 'днів';
   }
 
   /* --- countdown --------------------------------------------------- */
@@ -36,46 +102,38 @@
     var today = midnight(iso(new Date()));
     var toGo  = daysBetween(today, midnight(DEPART));
     var left  = daysBetween(today, midnight(RETURN));
-
+    var uk = lang === 'uk';
     var num, label;
 
     if (toGo > 1) {
       num = String(toGo);
-      label = plural(toGo) + ' до вильоту';
+      label = uk ? pluralUk(toGo) + ' до вильоту' : 'days until departure';
     } else if (toGo === 1) {
       num = '1';
-      label = 'день до вильоту — пакуватися сьогодні';
+      label = uk ? 'день до вильоту — пакуватися сьогодні' : 'day until departure — pack tonight';
     } else if (toGo === 0) {
-      num = 'Сьогодні';
-      label = 'LEJ 18:40 → BLQ 23:40';
+      num = uk ? 'Сьогодні' : 'Today';
+      label = uk ? 'виліт до Верони' : 'we fly to Verona';
     } else if (left > 0) {
-      num = 'День ' + (1 - toGo);
-      label = 'з 11 · ' + (nightLabel(today) || 'у дорозі');
+      num = (uk ? 'День ' : 'Day ') + (1 - toGo);
+      label = (uk ? 'з 11 · ' : 'of 11 · ') + (bedLabel(today) || (uk ? 'у дорозі' : 'on the road'));
     } else if (left === 0) {
-      num = 'Додому';
+      num = uk ? 'Додому' : 'Home';
       label = 'BLQ 18:40 → LEJ 23:10';
     } else {
-      num = 'Готово';
-      label = 'десять ночей, чотири бази';
+      num = uk ? 'Готово' : 'Done';
+      label = uk ? 'десять ночей, чотири бази' : 'ten nights, four bases';
     }
 
     numEl.textContent = num;
     labEl.textContent = label;
   }
 
-  /* день / дні / днів */
-  function plural(n) {
-    var ten = n % 10, hundred = n % 100;
-    if (ten === 1 && hundred !== 11) return 'день';
-    if (ten >= 2 && ten <= 4 && (hundred < 12 || hundred > 14)) return 'дні';
-    return 'днів';
-  }
-
-  function nightLabel(today) {
+  function bedLabel(today) {
     var card = document.querySelector('.day[data-date="' + iso(today) + '"]');
     if (!card) return '';
-    var bed = card.querySelector('.bed');
-    return bed ? bed.textContent.replace(/^Ночуємо\s*/, '').trim() : '';
+    var bed = card.querySelector('.bed[lang="' + lang + '"]');
+    return bed ? bed.textContent.trim() : '';
   }
 
   /* --- today's card ------------------------------------------------ */
@@ -87,44 +145,29 @@
 
   /* --- checklist --------------------------------------------------- */
 
-  function readStore(key) {
-    try { return window.localStorage.getItem(STORE + key); }
-    catch (e) { return null; }
-  }
-
-  function writeStore(key, value) {
-    try { window.localStorage.setItem(STORE + key, value); }
-    catch (e) { /* приватний режим або переповнене сховище — сторінка працює далі */ }
-  }
-
-  function dropStore(key) {
-    try { window.localStorage.removeItem(STORE + key); }
-    catch (e) { /* ignore */ }
-  }
-
   function checklist() {
     var list = document.getElementById('check');
     if (!list) return;
 
-    var boxes   = Array.prototype.slice.call(list.querySelectorAll('input[type="checkbox"]'));
-    var countEl = document.getElementById('progress-count');
-    var totalEl = document.getElementById('progress-total');
-    var barEl   = document.getElementById('progress-bar');
+    var boxes = Array.prototype.slice.call(list.querySelectorAll('input[type="checkbox"]'));
+    var counts = document.querySelectorAll('.progress__text .c');
+    var totals = document.querySelectorAll('.progress__text .t');
+    var barEl  = document.getElementById('progress-bar');
     var resetEl = document.getElementById('reset');
 
-    if (totalEl) totalEl.textContent = String(boxes.length);
+    Array.prototype.forEach.call(totals, function (t) { t.textContent = String(boxes.length); });
 
     function paint() {
       var done = boxes.filter(function (b) { return b.checked; }).length;
-      if (countEl) countEl.textContent = String(done);
+      Array.prototype.forEach.call(counts, function (c) { c.textContent = String(done); });
       if (barEl) barEl.style.width = (boxes.length ? (done / boxes.length) * 100 : 0) + '%';
     }
 
     boxes.forEach(function (box) {
       var key = box.getAttribute('data-key');
-      if (readStore(key) === '1') box.checked = true;
+      if (read(key) === '1') box.checked = true;
       box.addEventListener('change', function () {
-        if (box.checked) { writeStore(key, '1'); } else { dropStore(key); }
+        if (box.checked) { write(key, '1'); } else { drop(key); }
         paint();
       });
     });
@@ -133,7 +176,7 @@
       resetEl.addEventListener('click', function () {
         boxes.forEach(function (box) {
           box.checked = false;
-          dropStore(box.getAttribute('data-key'));
+          drop(box.getAttribute('data-key'));
         });
         paint();
       });
@@ -148,35 +191,35 @@
     var links = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
     if (!links.length || !('IntersectionObserver' in window)) return;
 
-    var map = {};
+    var byId = {};
     links.forEach(function (a) {
       var id = a.getAttribute('href').slice(1);
-      var section = document.getElementById(id);
-      if (section) map[id] = a;
+      if (!document.getElementById(id)) return;
+      (byId[id] = byId[id] || []).push(a);
     });
 
+    var order = Object.keys(byId);
     var seen = {};
 
     var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        seen[entry.target.id] = entry.isIntersecting;
-      });
-      var current = Object.keys(map).filter(function (id) { return seen[id]; })[0];
-      links.forEach(function (a) {
-        if (current && map[current] === a) { a.setAttribute('aria-current', 'true'); }
-        else { a.removeAttribute('aria-current'); }
+      entries.forEach(function (e) { seen[e.target.id] = e.isIntersecting; });
+      var current = order.filter(function (id) { return seen[id]; })[0];
+      order.forEach(function (id) {
+        byId[id].forEach(function (a) {
+          if (id === current) { a.setAttribute('aria-current', 'true'); }
+          else { a.removeAttribute('aria-current'); }
+        });
       });
     }, { rootMargin: '-72px 0px -60% 0px' });
 
-    Object.keys(map).forEach(function (id) {
-      io.observe(document.getElementById(id));
-    });
+    order.forEach(function (id) { io.observe(document.getElementById(id)); });
   }
 
   /* --- go ----------------------------------------------------------- */
 
   markToday();
-  countdown();
+  wireLang();
+  setLang(initialLang(), false);
   checklist();
   spy();
 })();

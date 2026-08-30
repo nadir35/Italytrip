@@ -80,6 +80,25 @@ a{color:inherit}
 [data-base="florence"]{--accent:var(--portico)}
 [data-base="coast"]   {--accent:var(--sea)}
 [data-base="transit"] {--accent:var(--rule-firm)}
+[data-base="verona"]  {--accent:var(--ochre)}
+
+/* language ----------------------------------------------- */
+/* Both languages ship in the HTML; one is hidden. With JS off
+   the document stays Ukrainian, which is the default in the source. */
+
+html[data-lang="uk"] body [lang="en"]{display:none}
+html[data-lang="en"] body [lang="uk"]{display:none}
+
+.lang{flex:none;display:flex;border:1px solid var(--ink-soft)}
+.lang__b{
+  appearance:none;-webkit-appearance:none;
+  border:0;background:transparent;color:var(--ink-soft);cursor:pointer;
+  font-family:var(--body);font-size:.66rem;font-weight:600;
+  letter-spacing:.1em;padding:.28rem .45rem;line-height:1;
+}
+.lang__b+.lang__b{border-left:1px solid var(--ink-soft)}
+.lang__b[aria-pressed="true"]{background:var(--slate);color:var(--limestone)}
+.lang__b:hover[aria-pressed="false"]{color:var(--slate)}
 
 /* hero --------------------------------------------------- */
 
@@ -137,10 +156,11 @@ a{color:inherit}
 .leg--rail-key{stroke:var(--slate);stroke-opacity:.55;stroke-width:3.5;stroke-dasharray:9 7}
 
 .pin{stroke:var(--limestone);stroke-width:3.5}
-.p--bologna {fill:var(--ochre)}
+.p--verona  {fill:var(--ochre)}
 .p--gardena {fill:var(--meadow)}
 .p--florence{fill:var(--portico)}
 .p--coast   {fill:var(--sea)}
+.exit{fill:var(--limestone);stroke:var(--slate);stroke-width:3.5;stroke-opacity:.65}
 .town{fill:var(--slate);fill-opacity:.42}
 
 .map__svg text{font-family:var(--body);fill:var(--slate)}
@@ -201,11 +221,15 @@ a{color:inherit}
 }
 .nav__inner{
   max-width:var(--measure);margin:0 auto;
-  display:flex;gap:1rem;overflow-x:auto;
+  display:flex;align-items:center;gap:.7rem;
   padding:.7rem 1.25rem;
+}
+.nav__scroll{
+  flex:1 1 auto;min-width:0;
+  display:flex;gap:1rem;overflow-x:auto;
   scrollbar-width:none;
 }
-.nav__inner::-webkit-scrollbar{display:none}
+.nav__scroll::-webkit-scrollbar{display:none}
 .nav a{
   white-space:nowrap;text-decoration:none;
   font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;
@@ -472,7 +496,8 @@ dd{margin:0;font-size:.93rem;color:var(--slate)}
 
 @media (min-width:48rem){
   .wrap{padding:0 2rem}
-  .nav__inner{padding:.7rem 2rem;gap:1.6rem}
+  .nav__inner{padding:.7rem 2rem}
+  .nav__scroll{gap:1.6rem}
   .nav a{font-size:.72rem;letter-spacing:.13em}
   .hero{padding-top:3.5rem}
 
@@ -512,8 +537,8 @@ dd{margin:0;font-size:.93rem;color:var(--slate)}
   .glance td[data-col]::before,
   .glance td[data-col]::after,
   .glance th[data-col]::before{content:none}
-  .glance td[data-col]:first-child{padding-left:0}
-  .glance td[data-col]:last-child{padding-right:0}
+  .glance td[data-col="nights"]{padding-left:0}
+  .glance td[data-col="via"]{padding-right:0}
   .glance th[scope="row"]{
     border-left:3px solid var(--accent);
     font-family:var(--display);font-size:1.2rem;line-height:1.25;
@@ -541,3 +566,9 @@ dd{margin:0;font-size:.93rem;color:var(--slate)}
   .day,.card{break-inside:avoid;page-break-inside:avoid}
   .foot{background:none;color:var(--slate)}
 }
+
+/* English equivalents of the CSS-generated labels ---------- */
+
+html[data-lang="en"] .bed::before{content:"Tonight"}
+html[data-lang="en"] .glance td[data-col="via"]::before{content:"Getting there"}
+html[data-lang="en"] .day[data-today] .day__body h3::after{content:"today"}
