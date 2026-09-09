@@ -150,18 +150,14 @@ html[data-lang="en"] body [lang="uk"]{display:none}
 
 .leg{fill:none;stroke-linecap:round;stroke-linejoin:round}
 .leg--car{stroke:var(--meadow);stroke-width:4}
-.leg--flo{stroke:var(--portico);stroke-width:3.5;stroke-dasharray:9 7}
-.leg--sea{stroke:var(--sea);stroke-width:3.5;stroke-dasharray:9 7}
-.leg--home{stroke:var(--slate);stroke-opacity:.3;stroke-width:2.5;stroke-dasharray:5 8}
 .leg--spur{stroke:var(--meadow);stroke-width:3;stroke-dasharray:6 5}
-.leg--rail-key{stroke:var(--slate);stroke-opacity:.55;stroke-width:3.5;stroke-dasharray:9 7}
+.leg--train{stroke:var(--portico);stroke-width:3.5;stroke-dasharray:9 7}
+.leg--daytrip{stroke:var(--slate);stroke-opacity:.38;stroke-width:2.5;stroke-dasharray:2 6}
 
 .pin{stroke:var(--limestone);stroke-width:3.5}
 .p--verona  {fill:var(--ochre)}
 .p--gardena {fill:var(--meadow)}
 .p--florence{fill:var(--portico)}
-.p--coast   {fill:var(--sea)}
-.exit{fill:var(--limestone);stroke:var(--slate);stroke-width:3.5;stroke-opacity:.65}
 .town{fill:var(--slate);fill-opacity:.42}
 .stop-garda{fill:var(--meadow);stroke:var(--limestone);stroke-width:2.5}
 
@@ -189,27 +185,9 @@ html[data-lang="en"] body [lang="uk"]{display:none}
   text-transform:uppercase;color:var(--ink-soft);margin-top:.15rem;
 }
 
-.map figcaption,.line figcaption{
+.map figcaption{
   margin:.9rem 0 0;font-size:.8rem;line-height:1.5;color:var(--ink-soft);
 }
-
-/* the Cinque Terre line, as a schematic ------------------- */
-
-.line{margin:1.6rem 0 0}
-.line__svg{display:block;width:100%;height:auto;max-width:23rem}
-.rail{stroke:var(--slate);stroke-opacity:.45;stroke-width:3}
-.stop{fill:var(--sea);stroke:var(--limestone);stroke-width:3}
-.line__svg text{font-family:var(--body);fill:var(--slate)}
-.stop__t{font-size:23px;font-weight:600}
-.gap{font-size:18px;fill-opacity:.6}
-.trail{fill:none;stroke-width:4;stroke-linecap:round}
-.trail--open {stroke:var(--meadow)}
-.trail--shut {stroke:var(--portico);stroke-dasharray:4 7}
-.trail--amore{stroke:var(--sea)}
-.line__svg .gap--open,
-.line__svg .gap--shut,
-.line__svg .gap--amore{fill-opacity:.85}
-
 
 /* nav ---------------------------------------------------- */
 
@@ -491,7 +469,7 @@ dd{margin:0;font-size:.93rem;color:var(--slate)}
 /* ≥ 560px ------------------------------------------------ */
 
 @media (min-width:35rem){
-  .bases{grid-template-columns:repeat(4,1fr);column-gap:1rem}
+  .bases{grid-template-columns:repeat(3,1fr);column-gap:1.4rem}
 }
 
 /* ≥ 48rem ------------------------------------------------ */
@@ -506,8 +484,6 @@ dd{margin:0;font-size:.93rem;color:var(--slate)}
   .lbl{font-size:19px}
   .ctx{font-size:16px}
   .water{font-size:15px}
-  .stop__t{font-size:18px}
-  .gap{font-size:14px}
 
   .day{padding-left:8rem;padding-bottom:2.5rem}
   .day::before{left:5.4rem}

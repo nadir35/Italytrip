@@ -7,7 +7,7 @@
   'use strict';
 
   var DEPART = '2026-10-02';
-  var RETURN = '2026-10-12';
+  var RETURN = '2026-10-10';
   var STORE  = 'italy-oct-2026:';
   var LANGKEY = STORE + 'lang';
 
@@ -116,13 +116,13 @@
       label = uk ? 'виліт до Верони' : 'we fly to Verona';
     } else if (left > 0) {
       num = (uk ? 'День ' : 'Day ') + (1 - toGo);
-      label = (uk ? 'з 11 · ' : 'of 11 · ') + (bedLabel(today) || (uk ? 'у дорозі' : 'on the road'));
+      label = (uk ? 'з 9 · ' : 'of 9 · ') + (bedLabel(today) || (uk ? 'у дорозі' : 'on the road'));
     } else if (left === 0) {
       num = uk ? 'Додому' : 'Home';
-      label = 'BLQ 18:40 → LEJ 23:10';
+      label = 'VRN 14:35 → LEJ 18:00';
     } else {
       num = uk ? 'Готово' : 'Done';
-      label = uk ? 'десять ночей, чотири бази' : 'ten nights, four bases';
+      label = uk ? 'вісім ночей, три бази' : 'eight nights, three bases';
     }
 
     numEl.textContent = num;
