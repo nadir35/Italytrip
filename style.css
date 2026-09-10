@@ -345,6 +345,10 @@ html[data-lang="en"] body [lang="uk"]{display:none}
   padding-left:.8rem;border-left:1px solid var(--rule-firm);
 }
 
+.note--warn{
+  color:var(--ink);border-left:3px solid var(--portico);padding-left:.9rem;
+}
+
 .sights__h{
   font-size:.62rem;text-transform:uppercase;letter-spacing:.16em;
   color:var(--ink-soft);margin:1.2rem 0 .5rem;
