@@ -1,4 +1,4 @@
-/* Італія · 2–12 жовтня 2026 — Italy · 2–12 October 2026
+/* Італія · 2–11 жовтня 2026 — Italy · 2–11 October 2026
    Чотири задачі: мова, відлік, чекліст, позначка розділу.
    Four jobs: language, countdown, checklist, section marker.
    Без залежностей, нічого не завантажується. */
@@ -7,7 +7,7 @@
   'use strict';
 
   var DEPART = '2026-10-02';
-  var RETURN = '2026-10-10';
+  var RETURN = '2026-10-11';
   var STORE  = 'italy-oct-2026:';
   var LANGKEY = STORE + 'lang';
 
@@ -28,8 +28,8 @@
   /* --- language ---------------------------------------------------- */
 
   var TITLE = {
-    uk: 'Італія · 2–12 жовтня 2026',
-    en: 'Italy · 2–12 October 2026'
+    uk: 'Італія · 2–11 жовтня 2026',
+    en: 'Italy · 2–11 October 2026'
   };
 
   function initialLang() {
@@ -116,13 +116,13 @@
       label = uk ? 'виліт до Верони' : 'we fly to Verona';
     } else if (left > 0) {
       num = (uk ? 'День ' : 'Day ') + (1 - toGo);
-      label = (uk ? 'з 9 · ' : 'of 9 · ') + (bedLabel(today) || (uk ? 'у дорозі' : 'on the road'));
+      label = (uk ? 'з 10 · ' : 'of 10 · ') + (bedLabel(today) || (uk ? 'у дорозі' : 'on the road'));
     } else if (left === 0) {
       num = uk ? 'Додому' : 'Home';
       label = 'VRN 14:35 → LEJ 18:00';
     } else {
       num = uk ? 'Готово' : 'Done';
-      label = uk ? 'вісім ночей, три бази' : 'eight nights, three bases';
+      label = uk ? 'дев\'ять ночей, три бази' : 'nine nights, three bases';
     }
 
     numEl.textContent = num;
