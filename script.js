@@ -165,9 +165,15 @@
 
     boxes.forEach(function (box) {
       var key = box.getAttribute('data-key');
-      if (read(key) === '1') box.checked = true;
+      var saved = read(key);
+      /* Whatever is already booked ships checked in the HTML, so storage has to
+         be able to say "unticked" out loud: an absent key means "never touched",
+         which is not the same as "no". Dropping the key on untick would let the
+         HTML default tick the box again on the next load. */
+      if (saved === '1') { box.checked = true; }
+      else if (saved === '0') { box.checked = false; }
       box.addEventListener('change', function () {
-        if (box.checked) { write(key, '1'); } else { drop(key); }
+        write(key, box.checked ? '1' : '0');
         paint();
       });
     });
@@ -175,8 +181,8 @@
     if (resetEl) {
       resetEl.addEventListener('click', function () {
         boxes.forEach(function (box) {
-          box.checked = false;
           drop(box.getAttribute('data-key'));
+          box.checked = box.defaultChecked;   /* booked things stay booked */
         });
         paint();
       });
