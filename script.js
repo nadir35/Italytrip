@@ -157,6 +157,22 @@
 
     Array.prototype.forEach.call(totals, function (t) { t.textContent = String(boxes.length); });
 
+    /* The shipped order is the ranking: most consequential first. Booked things
+       then rise above the rest, so the list always reads as "done" above "to do"
+       without losing the ranking inside either group. */
+    boxes.forEach(function (box, i) { box.parentNode.parentNode.setAttribute('data-rank', i); });
+
+    function reorder() {
+      var items = Array.prototype.slice.call(list.children);
+      items.sort(function (a, b) {
+        var ac = a.querySelector('input').checked ? 0 : 1;
+        var bc = b.querySelector('input').checked ? 0 : 1;
+        if (ac !== bc) { return ac - bc; }
+        return (+a.getAttribute('data-rank')) - (+b.getAttribute('data-rank'));
+      });
+      items.forEach(function (li) { list.appendChild(li); });
+    }
+
     function paint() {
       var done = boxes.filter(function (b) { return b.checked; }).length;
       Array.prototype.forEach.call(counts, function (c) { c.textContent = String(done); });
@@ -175,6 +191,7 @@
       box.addEventListener('change', function () {
         write(key, box.checked ? '1' : '0');
         paint();
+        reorder();
       });
     });
 
@@ -185,10 +202,12 @@
           box.checked = box.defaultChecked;   /* booked things stay booked */
         });
         paint();
+        reorder();
       });
     }
 
     paint();
+    reorder();
   }
 
   /* --- section marker in the nav ------------------------------------ */
