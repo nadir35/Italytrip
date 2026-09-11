@@ -6,7 +6,7 @@
 <title>Італія · 2–11 жовтня 2026</title>
 <meta name="description" content="Дев'ять ночей, три бази: Верона, Доломіти, Флоренція. Переліт Лейпциг ⇄ Верона, 2–11 жовтня 2026.">
 <meta name="theme-color" content="#2B3138">
-<link rel="stylesheet" href="style.css?v=6">
+<link rel="stylesheet" href="style.css?v=7">
 <style>
 /* Critical: keep this inline. A stale cached style.css must never be able to
    show both languages at once — this rule ships with the HTML, which is always
@@ -143,10 +143,10 @@ html[data-lang="en"] body [lang="uk"]{display:none}
       <tbody>
         <tr data-base="verona">
           <td data-col="nights" lang="uk" data-unit="ночі">2</td><td data-col="dates" lang="uk">2–3 жовт.</td>
-          <th scope="row" data-col="base" lang="uk">Верона</th>
+          <th scope="row" data-col="base" lang="uk">Верона <span class="sub">Verona Suite · заброньовано</span></th>
           <td data-col="via" lang="uk">Приліт 22:30</td>
           <td data-col="nights" lang="en" data-unit="nights">2</td><td data-col="dates" lang="en">2–3 Oct</td>
-          <th scope="row" data-col="base" lang="en">Verona</th>
+          <th scope="row" data-col="base" lang="en">Verona <span class="sub">Verona Suite · booked</span></th>
           <td data-col="via" lang="en">Land 22:30</td>
         </tr>
         <tr data-base="gardena">
@@ -209,6 +209,10 @@ html[data-lang="en"] body [lang="uk"]{display:none}
           <p class="note" lang="en">So the taxi is the plan and the bus is a bonus. The fares are fixed by the city, for up to four people and per car rather than per head: €30 to Porta Nuova, €35 to the centre — Brà, Erbe, Castelvecchio, San Zeno. The night tariff runs from 22:00, so those are the figures that apply.</p>
           <p class="note" lang="uk">Автобус коштував би 14 € на двох. Різниця з таксі — 16–21 €, і за неї ми не стоїмо з валізами на Порта-Нуова о 23:25.</p>
           <p class="note" lang="en">The bus would be €14 for the two of us. The taxi costs €16–21 more, and buys not standing at Porta Nuova with suitcases at 23:25.</p>
+          <p class="note" lang="uk">Verona Suite, П'яцца Ренато Сімоні 14 — апартамент з однією спальнею, дві ночі, 275,20 €. Заброньовано. 550 м від Порта-Нуова: і таксі з аеропорту приїде саме сюди, і 4-го за авто йти п'ять хвилин.</p>
+          <p class="note" lang="en">Verona Suite, Piazza Renato Simoni 14 — a one-bedroom apartment, two nights, €275.20. Booked. 550 m from Porta Nuova: the airport taxi comes straight here, and on the 4th the car is a five-minute walk away.</p>
+          <p class="note note--warn" lang="uk">Заселення до 00:00, і господар вимагає заздалегідь повідомити час приїзду. Написати йому: літак о 22:30, у квартирі близько 23:15. Без цього повідомлення о пів на дванадцяту ночі відчиняти може бути нікому.</p>
+          <p class="note note--warn" lang="en">Check-in closes at 00:00, and the host asks to be told the arrival time in advance. Message them: flight at 22:30, at the flat around 23:15. Without that message there may be nobody to open the door at half past eleven at night.</p>
         </div>
       </li>
 
@@ -561,8 +565,8 @@ html[data-lang="en"] body [lang="uk"]{display:none}
     <p class="sec__lede" lang="en">Ticks are kept on this device.</p>
 
     <div class="progress">
-      <p class="progress__text" lang="uk"><span class="c">5</span> з <span class="t">14</span> заброньовано</p>
-      <p class="progress__text" lang="en"><span class="c">5</span> of <span class="t">14</span> booked</p>
+      <p class="progress__text" lang="uk"><span class="c">6</span> з <span class="t">15</span> заброньовано</p>
+      <p class="progress__text" lang="en"><span class="c">6</span> of <span class="t">15</span> booked</p>
       <div class="progress__track"><div class="progress__bar" id="progress-bar"></div></div>
       <button type="button" class="reset" id="reset"><span lang="uk">Очистити все</span><span lang="en">Clear all</span></button>
     </div>
@@ -571,6 +575,10 @@ html[data-lang="en"] body [lang="uk"]{display:none}
       <li><label><input type="checkbox" data-key="flights" checked><span class="box" aria-hidden="true"></span>
         <span class="txt" lang="uk">Переліт LEJ ⇄ VRN <em>2 жовт. 18:40 → 22:30 · 11 жовт. 14:35 → 18:00 · заброньовано, Opodo 25642038433</em></span>
         <span class="txt" lang="en">Flights LEJ ⇄ VRN <em>2 Oct 18:40 → 22:30 · 11 Oct 14:35 → 18:00 · booked, Opodo 25642038433</em></span>
+      </label></li>
+      <li><label><input type="checkbox" data-key="hotel-verona" checked><span class="box" aria-hidden="true"></span>
+        <span class="txt" lang="uk">Verona Suite, П'яцца Ренато Сімоні 14, 2–3 жовт. <em>2 ночі · 275,20 € · заброньовано · 550 м від Порта-Нуова</em></span>
+        <span class="txt" lang="en">Verona Suite, Piazza Renato Simoni 14, 2–3 Oct <em>2 nights · €275.20 · booked · 550 m from Porta Nuova</em></span>
       </label></li>
       <li><label><input type="checkbox" data-key="hotel-dolomites" checked><span class="box" aria-hidden="true"></span>
         <span class="txt" lang="uk">Oberzerod Apartments, Сьюзі, 4–6 жовт. <em>3 ночі · заброньовано</em></span>
@@ -592,9 +600,9 @@ html[data-lang="en"] body [lang="uk"]{display:none}
         <span class="txt" lang="uk">Готель Флоренція, 7–10 жовт. <em>4 ночі, не 3 — виїзд 11-го · заселення близько 20:15</em></span>
         <span class="txt" lang="en">Hotel Florence, 7–10 Oct <em>4 nights, not 3 — checkout on the 11th · check-in around 20:15</em></span>
       </label></li>
-      <li><label><input type="checkbox" data-key="hotel-verona"><span class="box" aria-hidden="true"></span>
-        <span class="txt" lang="uk">Готель Верона, 2–3 жовт. <em>2 ночі · мусить приймати заселення близько 23:15</em></span>
-        <span class="txt" lang="en">Hotel Verona, 2–3 Oct <em>2 nights · must accept check-in around 23:15</em></span>
+      <li><label><input type="checkbox" data-key="verona-arrival"><span class="box" aria-hidden="true"></span>
+        <span class="txt" lang="uk">Написати господарю Verona Suite час приїзду <em>заселення до 00:00, ми будемо близько 23:15 — без цього можуть не відчинити</em></span>
+        <span class="txt" lang="en">Tell the Verona Suite host our arrival time <em>check-in closes at 00:00 and we land at 22:30 — without this there may be nobody to let us in</em></span>
       </label></li>
       <li><label><input type="checkbox" data-key="uffizi"><span class="box" aria-hidden="true"></span>
         <span class="txt" lang="uk">Квитки на час: Уффіці та / або Академія, Флоренція</span>
@@ -671,6 +679,6 @@ html[data-lang="en"] body [lang="uk"]{display:none}
   </div>
 </footer>
 
-<script src="script.js?v=6"></script>
+<script src="script.js?v=7"></script>
 </body>
 </html>
